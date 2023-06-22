@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <style>
+        .mainImage {
+            width: 600px;
+            height: 600px;
+           margin-left: 30%;
+        }
+
+        .im {
+            display: grid;
+            
+        }
+
+        .imge {
+
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        function changeImage(e) {
+          
+            console.log(e.currentTarget.src);
+            var bigImage = document.getElementById("bigImage").getAttribute("src");
+            document.getElementById("bigImage").setAttribute("src", e.currentTarget.src);
+            document.getElementById(e.currentTarget.id).setAttribute("src", bigImage);
+        }
+    </script>
+
+</head>
+
+<body>
+    
+    <img class="mainImage" id="bigImage" src="1.jpg" alt="big Image">
+
+    <div id="im">
+        <img class="imge" style="margin-left: 25%;" id="image1" onclick="changeImage(event)" src="1.jpg" alt="flower">
+        <img class="imge" id="image2" onclick="changeImage(event)" src="2.jpg" alt="flower">
+        <img class="imge" id="image3" onclick="changeImage(event)" src="3.jpg" alt="flower">
+        <img class="imge" id="image4" onclick="changeImage(event)" src="4.jpg" alt="flower">
+    </div>
+</body>
+
+</html>
